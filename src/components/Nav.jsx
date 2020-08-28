@@ -8,8 +8,10 @@ const Nav = () => {
       <Link to="/">
         <button>Home</button>
       </Link>
-      <button>Topics</button>
-      <Link to='/articles'>
+      <Link to='/topics'>
+        <button>Topics</button>
+      </Link>
+      <Link to="/articles">
         <button>Articles</button>
       </Link>
       <button>Add Article</button>
