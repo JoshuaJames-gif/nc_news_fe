@@ -1,5 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export const HomePage = () => {
-  return <p>Welcome to NC News</p>
-}
+  return (
+    <main>
+      <p>Welcome to NC News</p>
+    </main>
+  );
+};

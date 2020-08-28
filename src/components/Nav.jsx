@@ -9,6 +9,9 @@ const Nav = () => {
       <Link to="/">
         <button>Home</button>
       </Link>
+      <button>Topics</button>
+      <button>Articles</button>
+      <button>Add Article</button>
     </nav>
   );
 };
