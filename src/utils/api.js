@@ -5,7 +5,14 @@ const axiosInstance = axios.create({
 });
 
 export const getTopics = () => {
-  axiosInstance.get('/topics').then((topics) => {
+  return axiosInstance.get('/topics').then((topics) => {
     return topics.data.topics
   })
 }
+
+export const getAllArticles = () => {
+  return axiosInstance.get('/articles').then((res) => {
+    console.log('getArticles', res.data.articles)
+    return res.data.articles
+  });
+};

@@ -1,6 +1,5 @@
-import React from 'react';
-import {Link} from '@reach/router'
-
+import React from "react";
+import { Link } from "@reach/router";
 
 const Nav = () => {
   return (
@@ -10,7 +9,9 @@ const Nav = () => {
         <button>Home</button>
       </Link>
       <button>Topics</button>
-      <button>Articles</button>
+      <Link to='/articles'>
+        <button>Articles</button>
+      </Link>
       <button>Add Article</button>
     </nav>
   );
