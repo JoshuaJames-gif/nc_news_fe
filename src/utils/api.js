@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: "https://git.heroku.com/js-nc-news.git/api",
+  baseURL: "https://js-nc-news.herokuapp.com/api",
 });
 
 export const getTopics = () => {
-  axiosInstance.get('/articles').then((topics) => {
+  axiosInstance.get('/topics').then((topics) => {
     return topics.data.topics
   })
 }

@@ -1,26 +1,16 @@
 import React from 'react';
-// import * as api from '../utils/api'
+import {Link} from '@reach/router'
 
-class Nav extends React.Component {
-  state = {topics: []};
 
-  // componentDidMount () {
-  //   api.getTopics().then((topics) => {
-  //     this.setState({ topics });
-  //   });
-  // };
-
-  // getTopics = () => {
-  //   return api.getTopics();
-  // };
-
-  render() {
-    return (
-      <nav>
-        <h3>This is Nav bar</h3>
-      </nav>
-    )
-  }
+const Nav = () => {
+  return (
+    <nav>
+      <h3>This is Nav bar</h3>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
+    </nav>
+  );
 };
 
 export default Nav;
