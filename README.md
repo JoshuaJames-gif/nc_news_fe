@@ -1,6 +1,6 @@
 [x]view a list of all articles 
 [x]view a page for each topic with a list of related articles.
-view an individual article.
+[x]view an individual article.
 view an individual article's comments.
 sort articles by:
 date created
