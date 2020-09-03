@@ -26,12 +26,21 @@ class AllArticles extends React.Component {
       this.setState({ articles, isLoading: false });
     });
   }
+  handleChange = (event) => {
+    const {value} = event.target
+    this.setState({sort_by: value})
+  }
   render() {
     const { articles, isLoading } = this.state;
     // if(isLoading)
     return (
       <main>
-        <section>
+        <select onChange={this.handleChange} name="dropdown" id="dropdown">
+          <option value="votes">votes</option>
+          <option value="created_at">date</option>
+          <option value="comment_count">comment count</option>
+        </select>
+        {/* <section>
           <button onClick={() => this.getArticles("votes")}>votes</button>
           <button onClick={() => this.getArticles("created_at")}>
             date created
@@ -39,7 +48,7 @@ class AllArticles extends React.Component {
           <button onClick={() => this.getArticles("comment_count")}>
             comment count
           </button>
-        </section>
+        </section> */}
         <h3>NC News Articles:</h3>
         {isLoading ? (
           <p>Loading...</p>

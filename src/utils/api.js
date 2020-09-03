@@ -36,3 +36,7 @@ export const patchVotes = (id, vote, type) => {
     return data.article
   });
 };
+
+export const postComment = (comment, id) => {
+  return axiosInstance.post(`/articles/${id}/comments`)
+}
