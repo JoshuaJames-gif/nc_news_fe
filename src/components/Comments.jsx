@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import Voter from './Voter'
 
 class Comments extends Component {
   state = {
@@ -22,7 +23,9 @@ class Comments extends Component {
             <li key={comment.comment_id}>
               <h4>{comment.author}</h4>
               <p>Author: {comment.body}</p>
-              <p>Votes: {comment.votes}</p>
+              <Voter id={comment.comment_id}
+                votes={comment.votes}
+                type={"comments"}/>
               <p>Date Created: {comment.created_at}</p>
             </li>
           );

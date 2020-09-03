@@ -31,8 +31,8 @@ export const getComments = (article_id) => {
   });
 };
 
-export const patchVotes = (id, vote) => {
-  return axiosInstance.patch(`/articles/${id}`, { vote }).then(({ data }) => {
+export const patchVotes = (id, vote, type) => {
+  return axiosInstance.patch(`/${type}/${id}`, { vote }).then(({ data }) => {
     return data.article
   });
 };
