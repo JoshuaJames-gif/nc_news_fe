@@ -10,9 +10,9 @@ export const getTopics = () => {
   });
 };
 
-export const getAllArticles = (topic_slug) => {
+export const getAllArticles = (sort_by , topic_slug) => {
   return axiosInstance
-    .get("/articles", { params: { topic: topic_slug } })
+    .get("/articles", { params: { topic: topic_slug, sort_by } })
     .then((res) => {
       return res.data.articles;
     });
@@ -20,7 +20,13 @@ export const getAllArticles = (topic_slug) => {
 
 export const getSingleArticle = (article_id) => {
   return axiosInstance.get(`/articles/${article_id}`).then((res) => {
-    console.log(res.data);
     return res.data.article;
   });
 };
+
+export const getComments = (article_id) => {
+  return axiosInstance.get(`/articles/${article_id}/comments`).then((res) => {
+    console.log(res.data);
+    return res.data.comments
+  })
+}
