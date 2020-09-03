@@ -19,7 +19,7 @@ class Comments extends Component {
       <ul>
         {comments.map((comment) => {
           return (
-            <li>
+            <li key={comment.comment_id}>
               <h4>{comment.author}</h4>
               <p>Author: {comment.body}</p>
               <p>Votes: {comment.votes}</p>

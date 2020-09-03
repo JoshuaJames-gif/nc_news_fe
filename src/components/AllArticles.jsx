@@ -27,7 +27,7 @@ class AllArticles extends React.Component {
     });
   }
   render() {
-    const { articles, sort_by, isLoading } = this.state;
+    const { articles, isLoading } = this.state;
     // if(isLoading)
     return (
       <main>
@@ -47,7 +47,7 @@ class AllArticles extends React.Component {
           <ul>
             {articles.map((article) => {
               return (
-                <li>
+                <li key={article.article_id}>
                   <Link to={`/article/${article.article_id}`}>
                     <h4>{article.title}</h4>
                   </Link>

@@ -19,9 +19,9 @@ class Topics extends React.Component {
       <main>
         <h3>NC News Topics</h3>
         <ul>
-          {topics.map((topic) => {
+          {topics.map((topic, index) => {
             return (
-              <li>
+              <li key={index}>
                 <Link to={`/articles/topics/${topic.slug}`}>
                   <h4>{topic.slug}</h4>
                 </Link>
