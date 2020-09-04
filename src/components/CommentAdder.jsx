@@ -7,7 +7,7 @@ class CommentAdder extends Component {
   };
   render() {
     return (
-      <form>
+      <form onSubmit>
         <label onChange={this.handleChange} htmlFor="commentInput">
           Comment:
         </label>

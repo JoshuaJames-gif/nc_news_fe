@@ -15,12 +15,6 @@ class SingleArticle extends Component {
     });
   }
 
-  addComment = (newComment) => {
-    this.setState((currentState) => {
-      return { newComment, ...currentState }
-    })
-  }
-
   render() {
     console.log(this.props);
     const { article } = this.state;

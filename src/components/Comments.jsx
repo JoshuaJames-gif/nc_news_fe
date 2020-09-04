@@ -14,6 +14,12 @@ class Comments extends Component {
     });
   }
 
+  addComment = (newComment) => {
+    this.setState((currentState) => {
+      return { comments: [newComment, ...currentState.comments] }
+    })
+  }
+
   render() {
     const { comments } = this.state;
     return (
