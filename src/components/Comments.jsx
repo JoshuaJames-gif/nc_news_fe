@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import Voter from './Voter'
+import CommentAdder from './CommentAdder'
 
 class Comments extends Component {
   state = {
@@ -24,6 +25,7 @@ class Comments extends Component {
     const { comments } = this.state;
     return (
       <ul>
+      <CommentAdder addComment = {this.addComment} article_id={this.props.article_id} user={this.props.user}/>
         {comments.map((comment) => {
           return (
             <li key={comment.comment_id}>

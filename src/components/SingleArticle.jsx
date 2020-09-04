@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import Comments from "./Comments";
 import Voter from "./Voter";
-import CommentAdder from "./CommentAdder";
 
 class SingleArticle extends Component {
   state = {
@@ -30,9 +29,8 @@ class SingleArticle extends Component {
           votes={article.votes}
           type={"articles"}
         />: <p>Login to Vote</p>}
-        <CommentAdder addComment={this.addComment}/>
         <p>Comments</p>{" "}
-        <Comments article_id={this.props.article_id} votes={article.votes} />
+        <Comments article_id={this.props.article_id} votes={article.votes}  user={this.props.user}/>
       </>
     );
   }

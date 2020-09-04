@@ -37,8 +37,11 @@ export const patchVotes = (id, inc_votes, type) => {
   });
 };
 
-export const postComment = (commentInput, id) => {
+export const postComment = (body, username, id) => {
   return axiosInstance
-    .post(`/articles/${id}/comments`, { commentInput })
-    .then(({ data: { comment } }) => comment);
+    .post(`/articles/${id}/comments`, { body, username })
+    .then(({ data: { comment } }) => {
+      console.log(comment)
+      return comment
+    });
 };

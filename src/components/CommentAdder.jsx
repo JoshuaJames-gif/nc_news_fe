@@ -7,14 +7,16 @@ class CommentAdder extends Component {
   };
   render() {
     return (
-      <form onSubmit>
-        <label onChange={this.handleChange} htmlFor="commentInput">
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="commentInput">
           Comment:
         </label>
-        <input type="text" id="commentInput" name="commentInput" />
+        <input onChange={this.handleChange} type="text" id="commentInput" name="commentInput" />
+        <button type='submit'>Submit</button>
       </form>
     );
   }
+  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -22,7 +24,7 @@ class CommentAdder extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { commentInput } = this.state;
-    api.postComment(commentInput).then((comment) => {
+    api.postComment(commentInput, this.props.user, this.props.article_id).then((comment) => {
       this.props.addComment(comment)
     })
   };

@@ -9,7 +9,7 @@ import SingleArticle from "./components/SingleArticle";
 
 class App extends Component {
   state = {
-    user: "Joshy-washy123",
+    user: "tickle122",
   };
   render() {
     const { user } = this.state;
