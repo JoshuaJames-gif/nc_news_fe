@@ -33,10 +33,12 @@ export const getComments = (article_id) => {
 
 export const patchVotes = (id, vote, type) => {
   return axiosInstance.patch(`/${type}/${id}`, { vote }).then(({ data }) => {
-    return data.article
+    return data.article;
   });
 };
 
-export const postComment = (comment, id) => {
-  return axiosInstance.post(`/articles/${id}/comments`)
-}
+export const postComment = (commentInput, id) => {
+  return axiosInstance
+    .post(`/articles/${id}/comments`, { commentInput })
+    .then(({ data: { comment } }) => comment);
+};

@@ -15,6 +15,12 @@ class SingleArticle extends Component {
     });
   }
 
+  addComment = (newComment) => {
+    this.setState((currentState) => {
+      return { newComment, ...currentState }
+    })
+  }
+
   render() {
     console.log(this.props);
     const { article } = this.state;
@@ -30,7 +36,7 @@ class SingleArticle extends Component {
           votes={article.votes}
           type={"articles"}
         />: <p>Login to Vote</p>}
-        <CommentAdder />
+        <CommentAdder addComment={this.addComment}/>
         <p>Comments</p>{" "}
         <Comments article_id={this.props.article_id} votes={article.votes} />
       </>

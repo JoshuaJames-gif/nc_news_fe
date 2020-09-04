@@ -30,6 +30,7 @@ class AllArticles extends React.Component {
     const {value} = event.target
     this.setState({sort_by: value})
   }
+
   render() {
     const { articles, isLoading } = this.state;
     // if(isLoading)
